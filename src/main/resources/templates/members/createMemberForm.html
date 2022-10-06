@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<style>
+    button {
+        text-decoration: none;
+        margin: 1em;
+        padding: 5px 50px 5px 50px;
+    }
+    .container {
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 20px;
+    }
+</style>
+<body>
+<div class="container">
+    <form action="/members/new" method="post">
+        <div class="form-group">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" placeholder="이름을
+입력하세요">
+        </div>
+        <button type="submit">등록</button>
+    </form>
+</div> <!-- /container -->
+</body>
+</html>
