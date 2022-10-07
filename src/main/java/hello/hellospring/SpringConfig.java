@@ -24,7 +24,6 @@ public class SpringConfig {
     public MemberService memberService() {
         return new MemberService(memberRepository());
     }
-
     @Bean
     public MemberRepository memberRepository() {
         return new JdbcTemplateMemberRepository(dataSource);
