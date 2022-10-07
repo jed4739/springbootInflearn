@@ -1,23 +1,29 @@
 package hello.hellospring.service;
+
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
+
 @SpringBootTest
 @Transactional
 class MemberServiceIntegrationTest {
     @Autowired MemberService memberService;
     @Autowired MemberRepository memberRepository;
     @Test
-    public void 회원가입() throws Exception {
+    public void 회원가입() {
         //Given
         Member member = new Member();
-        member.setName("spring");
+        member.setName("spring100");
         //When
         Long saveId = memberService.join(member);
         //Then
@@ -25,7 +31,7 @@ class MemberServiceIntegrationTest {
         assertEquals(member.getName(), findMember.getName());
     }
     @Test
-    public void 중복_회원_예외() throws Exception {
+    public void 중복_회원_예외() {
         //Given
         Member member1 = new Member();
         member1.setName("spring");
