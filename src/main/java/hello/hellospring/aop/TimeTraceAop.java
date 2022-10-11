@@ -12,7 +12,7 @@ public class TimeTraceAop {
         long start = System.currentTimeMillis();
         System.out.println("START : " + joinPoint.toString());
         try {
-            Object result = joinPoint.proceed();
+            return joinPoint.proceed();
         } finally {
             long finish = System.currentTimeMillis();
             long timeMs = finish - start;
